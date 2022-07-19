@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="mesto - четвертый-девятые спринты на Яндекс.Практикуме">
+    <title>Mesto</title>
+    <meta name="author" content="Kити Самсонадзе">
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+    <body class="page">
+        <header class="header">
+            <img class="header__logo" src="./images/Vector.svg" alt="mesto_logo">
+            <img class="header__line">
+        </header>
+        <main class="main">
+            <section class="profile">  
+                <div class="profile__main">        
+                    <img class="profile__avatar" src="./images/custo.svg" alt="Custo">
+                    <div class="profile__editable">
+                        <div class="profile__info">
+                            <h1 class="profile__name">Жак-Ив Кусто</h1>
+                            <button class="button profile__edit-button" type="button"></button>               
+                        </div>
+                        <p class="profile__bio">Исследователь океана </p>  
+                    </div>   
+                </div> 
+
+                    <button class="button profile__add-button" type="button"></button>
+            </section>
+            
+            <div class="pop-up">
+                    <form class="pop-up__container" name="pop-up__container">
+                        <button class="close__button" type="button"></button>
+                        <h2 class="pop-up__title">Редактировать профиль</h2>
+                        <input class="pop-up__field popup__name" type="text" placeholder="Name"></label>
+                        <input class="pop-up__field popup__bio" type="text" placeholder="Bio"></label>
+                        <button class="submit__button" type="button">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            <section class="places">
+                <ul class="places__cards">
+                    <li class="place">
+                        <img class="place__img" src="./images/big_ban.jpeg" alt="big_ban">
+                        <div class="place__textbox">
+                            <h2 class="place__title">Big Ban</h2>
+                            <button class="button place__like-button"></button>
+                        </div>
+                    </li>
+                    <li class="place">
+                        <img class="place__img" src="./images/hampshire.jpeg" alt="hampshire">
+                        <div class="place__textbox">
+                            <h2 class="place__title">Hampshire</h2>
+                            <button class="button place__like-button"></button>
+                        </div>
+                    </li>
+                    <li class="place">
+                        <img class="place__img" src="./images/liverpool.jpeg" alt="liverpool">
+                        <div class="place__textbox">
+                            <h2 class="place__title">Liverpool</h2>
+                            <button class="button place__like-button"></button>
+                        </div>
+                    </li>
+                    <li class="place">
+                        <img class="place__img" src="./images/oxford_street.jpeg" alt="oxford street">
+                        <div class="place__textbox">
+                            <h2 class="place__title">Oxford Street</h2>
+                            <button class="button place__like-button"></button>
+                        </div>
+                    </li>
+                <div class="place">
+                    <img class="place__img" src="./images/scotland.jpeg" alt="scotland">
+                    <div class="place__textbox">
+                        <h2 class="place__title">Scotland</h2>
+                        <button class="button place__like-button"></button>
+                    </div>
+                </div>
+                <li class="place">
+                    <img class="place__img" src="./images/tower_bridge.jpeg" alt="tower bridge">
+                    <div class="place__textbox">
+                        <h2 class="place__title">Tower Bridge</h2>
+                        <button class="button place__like-button"></button>
+                    </div>
+                </li>
+            </ul>
+            </section>
+        </main>
+        <footer class="footer">
+            <nav class="footer__project-name">© 2020 Mesto Russia</nav>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
