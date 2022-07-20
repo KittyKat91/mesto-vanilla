@@ -1,11 +1,11 @@
 
 
-let submitButton = document.querySelector ('.submit__button')
-let closeButton = document.querySelector ('.close__button')
+let submitButton = document.querySelector ('.button__submit')
+let closeButton = document.querySelector ('.button__close')
 let editPopup = document.querySelector ('.profile__edit-button')
 let popup = document.querySelector ('.pop-up');
-let popupName = document.querySelector('.popup__name');
-let popupBio = document.querySelector('.popup__bio');
+let popupName = document.querySelector('.pop-up__field-name');
+let popupBio = document.querySelector('.pop-up__field-bio');
 let nameEdited
 let bioEdited
 
@@ -23,8 +23,8 @@ function closePopup(popup) {
  
 function formSubmitHandler(evt) {
     evt.preventDefault();
-    nameEdited = document.querySelector('.popup__name').value;
-    bioEdited = document.querySelector('.popup__bio').value;
+    nameEdited = document.querySelector('.pop-up__field-name').value;
+    bioEdited = document.querySelector('.pop-up__field-bio').value;
     popupName.textContent = nameEdited;
     popupBio.textContent = bioEdited; 
 }

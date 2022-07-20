@@ -30,8 +30,8 @@
 @import url(../blocks/footer/__project-name/footer__project-name.css);
 @import url(../blocks/footer/footer.css);
 
-@import url(../blocks/button/close__button.css);
-@import url(../blocks/button/submit__button.css);
+@import url(../blocks/button/__close/button__close.css);
+@import url(../blocks/button/__submit/button__submit.css);
 
 @import url(../blocks/pop-up/pop-up.css);
 @import url(../blocks/pop-up/__container/pop-up__container.css);
