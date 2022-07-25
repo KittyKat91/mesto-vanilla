@@ -13,8 +13,8 @@ editPopup.addEventListener('click', () => openPopup(popup[0]));
 
 function openPopup(popup) {
     popup.classList.toggle('pop-up__opened');
-    document.querySelector('.pop-up__field-name').value = document.querySelector('.profile__name').textContent;
-    document.querySelector('.pop-up__field-bio').value = document.querySelector('.profile__bio').textContent;
+    popupName.value = document.querySelector('.profile__name').textContent;
+    popupBio.value = document.querySelector('.profile__bio').textContent;
     
 }  
 
@@ -24,14 +24,13 @@ function closePopup() {
 
 const formElement = document.querySelector('.pop-up__submitform');
 
-console.log(formElement);
-
 function formSubmitHandler(evt) {
     evt.preventDefault();
     editedName = document.querySelector('.pop-up__field-name').value;
     editedBio = document.querySelector('.pop-up__field-bio').value;
     document.querySelector('.profile__name').textContent = editedName;
     document.querySelector('.profile__bio').textContent = editedBio;
+    closePopup();
 }
 
-formElement.addEventListener('submit', () => formSubmitHandler(evt));
+formElement.addEventListener('submit', formSubmitHandler);
