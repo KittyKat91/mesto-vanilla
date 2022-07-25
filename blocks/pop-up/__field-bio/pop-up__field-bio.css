@@ -1,15 +1,19 @@
-.pop-up__field{
+.pop-up__field-bio{
     background-color: transparent;
     border-bottom-style: groove;
     margin: 30px 36px 0 36px;
     border: none;
-    border-bottom: 1px solid #000000;
-    opacity: 0.2;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding-bottom: 13px;
 }
 
 @media (max-width: 560px){
-    .form__field{
+.pop-up__field-bio{
         margin: 43px 22px 0 22px;
     }
 }

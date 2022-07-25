@@ -23,3 +23,7 @@
         padding: 14px 82px 14px 82px;
     }
 }
+
+.pop-up__button-submit:hover {
+    opacity: 0.8;
+}
