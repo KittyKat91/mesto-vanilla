@@ -4,9 +4,11 @@
 @import url(../vendor/normalize.css);
 @import url(../scripts/script.js);
 
+
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__line/header__line.css);
 @import url(../blocks/header/__logo/header__logo.css);
+
 
 @import url(../blocks/cards/places__cards.css);   
 
@@ -34,6 +36,7 @@
 @import url(../blocks/footer/__project-name/footer__project-name.css);
 @import url(../blocks/footer/footer.css);
 
+
 @import url(../blocks/pop-up/pop-up.css);
 @import url(../blocks/pop-up/__container/pop-up__container.css);
 @import url(../blocks/pop-up/__field-bio/pop-up__field-bio.css);
@@ -43,14 +46,3 @@
 @import url(../blocks/pop-up/__button-close/pop-up__button-close.css);
 @import url(../blocks/pop-up/__button-submit/pop-up__button-submit.css);
 @import url(../blocks/pop-up/__submitform/pop-up__submitform.css);
-
-
-
-
-
-
-
-
-
-
-
