@@ -1,11 +1,11 @@
 
-let closeButton = document.querySelector ('.button__close');
-let closePopupButton = document.querySelector ('.pop-up__button-close');
-let editPopup = document.querySelector ('.profile__edit-button');
+const closeButton = document.querySelector ('.button__close');
+const closePopupButton = document.querySelector ('.pop-up__button-close');
+const editPopup = document.querySelector ('.profile__edit-button');
 
 const popup = document.getElementsByClassName ('pop-up');
-let popupName = document.querySelector('.pop-up__field-name');
-let popupBio = document.querySelector('.pop-up__field-bio');
+const popupName = document.querySelector('.pop-up__field-name');
+const popupBio = document.querySelector('.pop-up__field-bio');
 let editedName;
 let editedBio;
 
