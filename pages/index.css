@@ -9,8 +9,6 @@
 @import url(../blocks/header/__line/header__line.css);
 @import url(../blocks/header/__logo/header__logo.css);
 
-@import url(../blocks/cards/places__cards.css); 
-
 
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__editable/profile__editable.css);
@@ -30,6 +28,7 @@
 @import url(../blocks/places/__textbox/place__textbox.css);
 @import url(../blocks/places/__title/place__title.css);
 @import url(../blocks/places/places.css);
+@import url(../blocks/places/__cards/places__cards.css);
 
 
 @import url(../blocks/footer/__project-name/footer__project-name.css);
