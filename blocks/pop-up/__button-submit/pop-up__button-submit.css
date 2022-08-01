@@ -17,10 +17,16 @@
 
 @media (max-width: 800px){
     .pop-up__button-submit{
-        max-width: 238px;
         max-height: 46px;
         margin: 45px 22px 25px 22px;
         padding: 14px 82px 14px 82px;
+    }
+}
+
+@media (max-width: 600px){
+    .pop-up__button-submit{
+        max-width: 238px;
+        
     }
 }
 

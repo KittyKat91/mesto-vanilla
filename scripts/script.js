@@ -1,35 +1,38 @@
 
-const closeButton = document.querySelector ('.button__close');
-const closePopupButton = document.querySelector ('.pop-up__button-close');
+const popupProfileName = document.querySelector('.pop-up__field-name');
+const popupProfileBio = document.querySelector('.pop-up__field-bio');
+const editedProfileName = document.querySelector('.profile__name');
+const editedProfileBio = document.querySelector('.profile__bio');
+
+
+const popup = document.querySelector ('.pop-up');
 const editPopup = document.querySelector ('.profile__edit-button');
-
-const popup = document.getElementsByClassName ('pop-up');
-const popupName = document.querySelector('.pop-up__field-name');
-const popupBio = document.querySelector('.pop-up__field-bio');
-let editedName;
-let editedBio;
-
 editPopup.addEventListener('click', () => openPopup(popup[0]));
 
-function openPopup(popup) {
-    popup.classList.toggle('pop-up__opened');
-    popupName.value = document.querySelector('.profile__name').textContent;
-    popupBio.value = document.querySelector('.profile__bio').textContent;
+function openPopup() {
+    popup.classList.add('pop-up_opened');
+    popup.classList.remove('pop-up');
+    popupProfileName.value = editedProfileName.textContent;
+    popupProfileBio.value = editedProfileBio.textContent;
     
 }  
 
+const closeButton = document.querySelector ('.button__close');
+const closePopupButton = document.querySelector ('.pop-up__button-close');
+closePopupButton.addEventListener('click', () => closePopup(popup[0]));
+
 function closePopup() {
-    document.getElementsByClassName ('pop-up')[0].classList.toggle('pop-up__opened');
+    popup.classList.add('pop-up');
+    popup.classList.remove('pop-up_opened');
 }
+
 
 const formElement = document.querySelector('.pop-up__submitform');
 
 function formSubmitHandler(evt) {
     evt.preventDefault();
-    editedName = document.querySelector('.pop-up__field-name').value;
-    editedBio = document.querySelector('.pop-up__field-bio').value;
-    document.querySelector('.profile__name').textContent = editedName;
-    document.querySelector('.profile__bio').textContent = editedBio;
+    editedProfileName.textContent = popupProfileName.value;
+    editedProfileBio.textContent = popupProfileBio.value;
     closePopup();
 }
 
