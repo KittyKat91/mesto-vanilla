@@ -1,9 +1,10 @@
 .places__cards{
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(3, 282px);
+    grid-template-columns: repeat(auto-fill, 282px);
     grid-template-rows: repeat(2, 1fr);
     background-color: white transparent;
+    justify-content: center;
     grid-column-gap: 17px;
     grid-row-gap: 20px;
     padding: 0;
@@ -11,12 +12,3 @@
     z-index: 1;    
 }
 
-@media (max-width: 878px) {
-    .places__cards {
-        grid-template-columns: repeat(1, 282px);
-        grid-template-rows: repeat(6, 1fr);
-        margin: 0 auto;
-        max-width: 282px;
-    }
-    
-}
