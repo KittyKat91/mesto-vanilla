@@ -28,53 +28,21 @@
 
                     <button class="button profile__add-button" type="button"></button>
             </section>
-
             <section class="places">
                 <ul class="places__cards">
-                    <li class="place">
-                        <img class="place__img" src="./images/big_ban.jpeg" alt="биг бен">
+                    <template id="place__template">
+                        <li class="place">
+                        <button class="place__button-delete" type="button" aria-label="delete"></button>
+                        <img class="place__img" src="#" alt="#">
                         <div class="place__textbox">
-                            <h2 class="place__title">Big Ban</h2>
+                            <h2 class="place__title"></h2>
                             <button class="button place__like-button" type="button"></button>
                         </div>
-                    </li>
-                    <li class="place">
-                        <img class="place__img" src="./images/hampshire.jpeg" alt="хампшир">
-                        <div class="place__textbox">
-                            <h2 class="place__title">Hampshire</h2>
-                            <button class="button place__like-button" type="button"></button>
-                        </div>
-                    </li>
-                    <li class="place">
-                        <img class="place__img" src="./images/liverpool.jpeg" alt="ливерпуль">
-                        <div class="place__textbox">
-                            <h2 class="place__title">Liverpool</h2>
-                            <button class="button place__like-button" type="button"></button>
-                        </div>
-                    </li>
-                    <li class="place">
-                        <img class="place__img" src="./images/oxford_street.jpeg" alt="оксфорд">
-                        <div class="place__textbox">
-                            <h2 class="place__title">Oxford Street</h2>
-                            <button class="button place__like-button" type="button"></button>
-                        </div>
-                    </li>
-                <li class="place">
-                    <img class="place__img" src="./images/scotland.jpeg" alt="шотландия">
-                    <div class="place__textbox">
-                        <h2 class="place__title">Scotland</h2>
-                        <button class="button place__like-button" type="button"></button>
-                    </div>
-                </li>
-                <li class="place">
-                    <img class="place__img" src="./images/tower_bridge.jpeg" alt="тауер">
-                    <div class="place__textbox">
-                        <h2 class="place__title">Tower Bridge</h2>
-                        <button class="button place__like-button" type="button"></button>
-                    </div>
-                </li>
-            </ul>
+                        </li>
+                    </template>
+                </ul>
             </section>
+                    
         </main>
         <footer class="footer">
             <div class="footer__project-name">© 2022 Mesto Russia</div>
@@ -87,6 +55,17 @@
                     <input class="pop-up__field pop-up__field-name" type="text" placeholder="Имя">
                     <input class="pop-up__field pop-up__field-bio" type="text" placeholder="Профиль">
                     <button class="button pop-up__button-submit" id="pop-up-submit" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
+        <div class="pop-up pop-up__new-place" id="pop-up__new-place">
+            <div class="pop-up__container">
+                <button class="button pop-up__new-place_button-close"  type="button" ></button>
+                <h2 class="pop-up__title">Новое место</h2>
+                <form class="pop-up__addplace" id="addplace" name="addplace">
+                    <input class="pop-up__field pop-up__field-title" type="text" placeholder="Название">
+                    <input class="pop-up__field pop-up__field-link" type="text" placeholder="Ссылка на картинку">
+                    <button class="button pop-up__button-create" id="pop-up-submit" type="submit">Создать</button>
                 </form>
             </div>
         </div>
