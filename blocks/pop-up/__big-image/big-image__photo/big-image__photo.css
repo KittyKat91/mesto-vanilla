@@ -1,0 +1,8 @@
+.big-image__photo{
+    align-self: center;
+    justify-self: center;
+    margin: 0 auto;
+    max-height: 75vh;
+    max-width: 75vw;
+    box-sizing: border-box;
+}

@@ -1,0 +1,4 @@
+.pop-up__big-image__opened{
+    display: flex;
+    flex-direction: column;
+}

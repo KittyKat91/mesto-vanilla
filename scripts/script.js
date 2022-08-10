@@ -1,21 +1,23 @@
 
-
 //second pop-up setup
-const addNewPlace = document.querySelector('.profile__add-button');
-const newPlaceForm = document.querySelector('.pop-up__new-place');
-const newPlacePopUpCloseButton = document.querySelector('.pop-up__new-place_button-close');
+    const addNewPlace = document.querySelector('.profile__add-button'); //plus button
+    const newPlaceForm = document.querySelector('.pop-up__new-place'); //new place pop-up form
+    const newPlacePopUpCloseButton = document.querySelector('.new-place__button-close'); //close button
 
 addNewPlace.addEventListener('click', () => openAddPlacePopup());
 
+
 function openAddPlacePopup() {
-    newPlaceForm.classList.add('pop-up__new-place_opened');
+    newPlaceForm.classList.add('pop-up_opened');
 }
 
 newPlacePopUpCloseButton.addEventListener('click', () => closeAddPlacePopup());
 
 function closeAddPlacePopup () {
-    newPlaceForm.classList.remove('pop-up__new-place_opened');
+    newPlaceForm.classList.remove('pop-up_opened');
 }
+
+
 
 //cards to be loaded on the page
 const initialCards = [
@@ -45,52 +47,102 @@ const initialCards = [
     }
   ];
 
-  //inputs of the card
-  const cardInputs = {
+ 
+ //inputs of the card
+ const cardInputs = {
     place: '.place',
-    image: '.place__img', //image of the place
-    name: '.place__title', //the name of the place
-    template: '#place__template',
-    deleteBtn: '.place__button-delete',
-    cardList: '.places__cards', //ul 
-    likeBtn: '.place__like-button',
+    placeimg: '.place__img', //image of the place
+    placeBigImage: '.pop-up__big-image',
+    imgPopupCloseBtn: '.pop-up__button-close__big-image',
+    popupImage:'.big-image__photo',
+    popupImageText:'.big-image__caption',
+    imgPopupCaption: '.big-image__caption', //big image text
+    placename: '.place__title', //the name of the place
+    placetemplate: '#place__template',
+    placedeleteBtn: '.place__button-delete',
+    placecardList: '.places__cards', //ul 
+    placeLikeBtn: '.place__like-button',
+    placeLikeBtnActive: '.place__like-button_active',//liked button
   }
 
+  const cardsContainer = document.querySelector(cardInputs.placecardList);
 
+  const template = document.querySelector(cardInputs.placetemplate).content;
+  const placeLikeBtn = document.querySelectorAll(cardInputs.placeLikeBtn);
+  const popupImgBig = document.querySelector(cardInputs.placeBigImage);
+  const popupImage = document.querySelector(cardInputs.popupImage);
+  const popupImageText = document.querySelector(cardInputs.popupImageText);
+  const imgDeleteBtn = document.querySelector (cardInputs.imgPopupCloseBtn);
+  
  //template to create new card
  function createNewPlace(link, name){
-    const newPlaceCard = template.cloneNode(true);
+    const newPlaceCard = template.querySelector(cardInputs.place).cloneNode(true);
 
-    const image = document.querySelector(cardInputs.image);
-    const placeName = document.querySelector(cardInputs.name);
-    const place = document.querySelector(cardInputs.place);
-    const template = document.querySelector(cardInputs.template).content;
-    const cardList = document.querySelector(cardInputs.cardList);
-    const likeBtn = document.querySelector(cardInputs.likeBtn);
-    const deleteBtn = document.querySelector(cardInputs.deleteBtn);
+    const image = newPlaceCard.querySelector(cardInputs.placeimg);
+    const placeName = newPlaceCard.querySelector(cardInputs.placename);
+    const place = newPlaceCard.querySelector(cardInputs.place);
+    
+    const likeBtn = newPlaceCard.querySelector(cardInputs.placeLikeBtn);
+    const deleteBtn = newPlaceCard.querySelector(cardInputs.placedeleteBtn);
+    
 
-    image.alt = link;
-    image.name = name;
-    name.textContent = name;
+    image.src = link;
+    image.alt = name;
+    placeName.textContent = name;
+
 
     deleteBtn.addEventListener ('click', () => newPlaceCard.remove());
+    likeBtn.addEventListener ('click', () => likeBtn.classList.toggle('place__like-button_active'));
+    image.addEventListener ('click', () => openBigCard(link, name));
+    
 
     return newPlaceCard;
-    console.log (newPlaceCard);
-  }
+  } 
+
+  function openBigCard(link, name){
+    popupImgBig.classList.add('pop-up_opened');
+    popupImage.src = link;
+    popupImage.alt = name;
+    popupImageText.textContent = name;
+};
+
+imgDeleteBtn.addEventListener ('click', () => popupImgBig.classList.remove('pop-up_opened'));
+  
+
 
   function renderPlace (container, data, position = 'before'){
-    if (position === before) {
-    newPlaceCard.prepend(createNewPlace(data.link, data.name));
+    if (position === 'before') {
+    container.prepend(createNewPlace(data.link, data.name));
     }
+    if (position === 'after') {
+        container.append(createNewPlace(data.link, data.name));
+        }
   }
-
-
 
 //taking initial cards to the screen
 function createInitialCards(){
-    initialCards.forEach((item) => cards.append(createNewPlace(item.link, item.name)));
+    initialCards.forEach((item) => renderPlace (cardsContainer, item, 'after'));
     } 
+
+    createInitialCards();
+
+//adding new photos - taking info from pop-up into the new card
+
+const formNewPlace = document.querySelector('.pop-up__new-place');
+const placeImage = document.querySelector(cardInputs.placeimg);
+const placeTitle = document.querySelector('.place__title');
+const placePopupTitle = document.querySelector('.pop-up__field-title');
+const placePopupLink = document.querySelector('.pop-up__field-link');
+
+
+function cardSubmitHandler(evt) {
+    evt.preventDefault();
+    placeImage.src = placePopupLink.value;
+    placeTitle.textContent = placePopupTitle.value;
+    placeImage.alt = placePopupTitle.value;
+}
+
+formNewPlace.addEventListener('submit', () => cardSubmitHandler());
 
 // **** Sprint 4 ****
 
@@ -132,7 +184,6 @@ function formSubmitHandler(evt) {
 
 formElement.addEventListener('submit', formSubmitHandler);
   
-
 
 
 
