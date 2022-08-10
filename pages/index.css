@@ -30,8 +30,9 @@
 @import url(../blocks/pop-up/__submitform/pop-up__submitform.css);
 @import url(../blocks/pop-up/__button-create/pop-up__button-create.css);
 @import url(../blocks/pop-up/__button-close/new-place__button-close/new-place__button-close.css);
-@import url(../blocks/pop-up/__new-place/pop-up__new-place.css);
 @import url(../blocks/pop-up/__addplace/pop-up__addplace.css);
+@import url(../blocks/pop-up/__addplace/__new-place/pop-up__new-place.css);
+@import url(../blocks/pop-up/__addplace/new-place__button-close/new-place__button-close.css);
 
 @import url(../blocks/place/place.css);
 @import url(../blocks/place/__button-delete/place__button-delete.css);
