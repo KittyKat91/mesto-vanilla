@@ -48,23 +48,22 @@
                 </form>
             </div>
         </div>
-        <div class="pop-up pop-up__new-place" id="pop-up__new-place">
+        <div class="pop-up pop-up__place" id="pop-up__place">
             <div class="pop-up pop-up__container">
-                <button class="button new-place__button-close"  type="button" ></button>
+                <button class="button place__button-close"  type="button" ></button>
                 <h2 class="pop-up__title">Новое место</h2>
                 <form class="pop-up__addplace" id="addplace" name="addplace">
-                    <input class="pop-up__field pop-up__field-title" type="text" placeholder="Название">
-                    <input class="pop-up__field pop-up__field-link" type="text" placeholder="Ссылка на картинку">
+                    <input class="pop-up__field pop-up__field-title" required type="text" placeholder="Название">
+                    <input class="pop-up__field pop-up__field-link" required type="url" placeholder="Ссылка на картинку">
                     <button class="button pop-up__button-create" id="pop-up__button-create" type="submit">Создать</button>
                 </form>
             </div>
-        </div>
-        <div class="pop-up__big-image">
-    
-           <div class="big-image__container">
-                <button name="big-image__btn-close" class="button pop-up__button-close__big-image"  type="button" ></button>
-                <img class="big-image__photo" src="#" alt="#">
-                <h3 class="big-image__caption"></h3>
+        </div> 
+        <div class="pop-up__image">
+           <div class="image__container">
+                <button name="image__btn-close" class="button image__btn-close"  type="button" ></button>
+                <img class="image__photo" src="#" alt="#">
+                <h3 class="image__caption"></h3>
             </div>
         </div>
         <template id="place__template">

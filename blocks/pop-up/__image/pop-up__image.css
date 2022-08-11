@@ -1,4 +1,4 @@
-.pop-up__new-place {
+.pop-up__image{
     display: none;
     z-index: 3;
     left: 0;
@@ -10,4 +10,8 @@
     height: 200vh;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    -webkit-transition: opacity 500ms ease-in-out;
+    transition: visibility .3s, opacity .3s ease;
+
 }

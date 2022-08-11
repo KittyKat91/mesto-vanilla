@@ -1,4 +1,4 @@
-.pop-up__button-close__big-image{
+.image__btn-close{
     background-image: url(../../../../images/Close_Icon.svg);
     background-size: cover;
     background-color: transparent;
@@ -16,7 +16,7 @@
 }
     
 @media (max-width: 560px){
-    .pop-up__button-close__big-image{
+    .mage__btn-close{
         width: 20px;
         height: 20px;
         top: -40px;
@@ -25,6 +25,6 @@
     }
 }
     
-.pop-up__button-close__big-image:hover{
+.mage__btn-close:hover{
     opacity: 0.6;
 }

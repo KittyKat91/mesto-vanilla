@@ -1,8 +1,8 @@
 
 //second pop-up setup
     const addNewPlace = document.querySelector('.profile__add-button'); //plus button
-    const newPlaceForm = document.querySelector('.pop-up__new-place'); //new place pop-up form
-    const newPlacePopUpCloseButton = document.querySelector('.new-place__button-close'); //close button
+    const newPlaceForm = document.querySelector('.pop-up__place'); //new place pop-up form
+    const newPlacePopUpCloseButton = document.querySelector('.place__button-close'); //close button
 
 addNewPlace.addEventListener('click', () => openAddPlacePopup());
 
@@ -52,11 +52,11 @@ const initialCards = [
  const cardInputs = {
     place: '.place',
     placeimg: '.place__img', //image of the place
-    placeBigImage: '.pop-up__big-image',
-    imgPopupCloseBtn: '.pop-up__button-close__big-image',
-    popupImage:'.big-image__photo',
-    popupImageText:'.big-image__caption',
-    imgPopupCaption: '.big-image__caption', //big image text
+    placeBigImage: '.pop-up__image',
+    imgPopupCloseBtn: '.image__btn-close',
+    popupImage:'.image__photo',
+    popupImageText:'.image__caption',
+    imgPopupCaption: '.image__caption', //big image text
     placename: '.place__title', //the name of the place
     placetemplate: '#place__template',
     placedeleteBtn: '.place__button-delete',
@@ -128,7 +128,7 @@ function createInitialCards(){
 
 //adding new photos - taking info from pop-up into the new card
 
-const formNewPlace = document.querySelector('.pop-up__new-place');
+const formNewPlace = document.querySelector('.pop-up__addplace');
 const placeImage = document.querySelector(cardInputs.placeimg);
 const placeTitle = document.querySelector('.place__title');
 const placePopupTitle = document.querySelector('.pop-up__field-title');

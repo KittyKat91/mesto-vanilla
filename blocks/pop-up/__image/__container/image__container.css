@@ -1,4 +1,4 @@
-    .big-image__container{
+    .image__container{
     border-radius: 10px;
     display: flex;
     position: relative;
@@ -10,14 +10,14 @@
     }
 
     @media (max-width: 820px){
-        .big-image__container{
+        .image__container{
             margin-top: 0;
     
         }
     }
     
     @media (max-width: 560px){
-        .big-image__container{
+        .image__container{
             width: 282px;
             margin-top: 95%;
     
