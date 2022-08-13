@@ -1,8 +1,8 @@
 
 //second pop-up setup
     const addNewPlace = document.querySelector('.profile__add-button'); //plus button
-    const newPlaceForm = document.querySelector('.pop-up__place'); //new place pop-up form
-    const newPlacePopUpCloseButton = document.querySelector('.place__button-close'); //close button
+    const newPlaceForm = document.querySelector('.pop-up_type_place'); //new place pop-up form
+    const closeBtn = document.querySelector('.pop-up__button-close_place'); //close button
 
 addNewPlace.addEventListener('click', () => openAddPlacePopup());
 
@@ -11,11 +11,14 @@ function openAddPlacePopup() {
     newPlaceForm.classList.add('pop-up_opened');
 }
 
-newPlacePopUpCloseButton.addEventListener('click', () => closeAddPlacePopup());
+console.log(newPlaceForm);
+
+closeBtn.addEventListener('click', () => closeAddPlacePopup());
 
 function closeAddPlacePopup () {
     newPlaceForm.classList.remove('pop-up_opened');
 }
+console.log(closeBtn);
 
 
 
@@ -52,14 +55,14 @@ const initialCards = [
  const cardInputs = {
     place: '.place',
     placeimg: '.place__img', //image of the place
-    placeBigImage: '.pop-up__image',
-    imgPopupCloseBtn: '.image__btn-close',
-    popupImage:'.image__photo',
-    popupImageText:'.image__caption',
-    imgPopupCaption: '.image__caption', //big image text
+    placeBigImage: '.pop-up_type_image',
+    popupImage:'.pop-up__photo',
+    popupImageText:'.pop-up__caption',
+    imgPopupCaption: '.pop-up__caption', //big image text
     placename: '.place__title', //the name of the place
     placetemplate: '#place__template',
     placedeleteBtn: '.place__button-delete',
+    imgDeleteBtn: '.pop-up__button-close_image',
     placecardList: '.places__cards', //ul 
     placeLikeBtn: '.place__like-button',
     placeLikeBtnActive: '.place__like-button_active',//liked button
@@ -72,7 +75,7 @@ const initialCards = [
   const popupImgBig = document.querySelector(cardInputs.placeBigImage);
   const popupImage = document.querySelector(cardInputs.popupImage);
   const popupImageText = document.querySelector(cardInputs.popupImageText);
-  const imgDeleteBtn = document.querySelector (cardInputs.imgPopupCloseBtn);
+  const imgDeleteBtn = document.querySelector(cardInputs.imgDeleteBtn);
   
  //template to create new card
  function createNewPlace(link, name){
@@ -99,6 +102,7 @@ const initialCards = [
     return newPlaceCard;
   } 
 
+  // big img open
   function openBigCard(link, name){
     popupImgBig.classList.add('pop-up_opened');
     popupImage.src = link;
@@ -128,7 +132,7 @@ function createInitialCards(){
 
 //adding new photos - taking info from pop-up into the new card
 
-const formNewPlace = document.querySelector('.pop-up__addplace');
+const formNewPlace = document.querySelector('.pop-up__form_type_addplace');
 const placeImage = document.querySelector(cardInputs.placeimg);
 const placeTitle = document.querySelector('.place__title');
 const placePopupTitle = document.querySelector('.pop-up__field-title');
@@ -140,9 +144,11 @@ function cardSubmitHandler(evt) {
     placeImage.src = placePopupLink.value;
     placeTitle.textContent = placePopupTitle.value;
     placeImage.alt = placePopupTitle.value;
+    
 }
 
 formNewPlace.addEventListener('submit', () => cardSubmitHandler());
+
 
 // **** Sprint 4 ****
 
@@ -150,7 +156,7 @@ const popupProfileName = document.querySelector('.pop-up__field-name');
 const popupProfileBio = document.querySelector('.pop-up__field-bio');
 const editedProfileName = document.querySelector('.profile__name');
 const editedProfileBio = document.querySelector('.profile__bio');
-const popup = document.querySelector ('.pop-up');
+const popup = document.querySelector ('.pop-up_type_user');
 const editPopup = document.querySelector ('.profile__edit-button');
 
 
