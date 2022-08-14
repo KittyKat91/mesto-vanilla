@@ -2,7 +2,7 @@
 //second pop-up setup
     const addNewPlace = document.querySelector('.profile__add-button'); //plus button
     const newPlaceForm = document.querySelector('.pop-up_type_place'); //new place pop-up form
-    const closeBtn = document.querySelector('.pop-up__button-close_place'); //close button
+    const closeBtn = document.querySelector('.pop-up__container-button-close'); //close button
 
 addNewPlace.addEventListener('click', () => openAddPlacePopup());
 
