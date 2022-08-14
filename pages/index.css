@@ -22,7 +22,6 @@
 
 @import url(../blocks/pop-up/__form_type_addplace/pop-up__form_type_addplace.css);
 @import url(../blocks/pop-up/__button-close/pop-up__button-close.css);
-@import url(../blocks/pop-up/__button-close/_image/pop-up__button-close_image.css);
 @import url(../blocks/pop-up/__button-close/__container-button-close/pop-up__container-button-close.css);
 @import url(../blocks/pop-up/__button-create/pop-up__button-create.css);
 @import url(../blocks/pop-up/__button-submit/pop-up__button-submit.css);

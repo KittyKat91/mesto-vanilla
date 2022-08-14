@@ -62,7 +62,6 @@ const initialCards = [
     placename: '.place__title', //the name of the place
     placetemplate: '#place__template',
     placedeleteBtn: '.place__button-delete',
-    imgDeleteBtn: '.pop-up__button-close_image',
     placecardList: '.places__cards', //ul 
     placeLikeBtn: '.place__like-button',
     placeLikeBtnActive: '.place__like-button_active',//liked button
@@ -75,7 +74,7 @@ const initialCards = [
   const popupImgBig = document.querySelector(cardInputs.placeBigImage);
   const popupImage = document.querySelector(cardInputs.popupImage);
   const popupImageText = document.querySelector(cardInputs.popupImageText);
-  const imgDeleteBtn = document.querySelector(cardInputs.imgDeleteBtn);
+  const imgDeleteBtn = document.getElementById('pop-up__image-close');
   
  //template to create new card
  function createNewPlace(link, name){
