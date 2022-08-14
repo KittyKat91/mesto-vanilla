@@ -161,25 +161,21 @@ function submitCardHandler(event) {
 
 
 newPlaceAdd.addEventListener('click', () => openPopup(newPlaceForm));
-
-popupContainerCloseBtn.addEventListener('click', () => closePopup(newPlaceForm));
-
 formNewPlace.addEventListener('submit', submitCardHandler);
 
 imgDeleteBtn.addEventListener('click', () => popupImgBig.classList.remove('pop-up_opened'));
+popupContainerCloseBtn.addEventListener('click', () => closePopup(newPlaceForm));
+closePopupButton.addEventListener('click', closePopup(popupUser));
 
-
+profileEditFormElement.addEventListener('submit', submitFormHandler);
 
 popupEdit.addEventListener('click', () => {
     popupProfileName.value = editedProfileName.textContent;
     popupProfileBio.value = editedProfileBio.textContent;
-    openPopup(popupUser)
+    openPopup(popupUser);
 });
 
 
-closePopupButton.addEventListener('click', closePopup);
-
-profileEditFormElement.addEventListener('submit', submitFormHandler);
 
 
 
