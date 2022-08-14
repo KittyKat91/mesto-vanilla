@@ -8,24 +8,13 @@
     position: relative;
     box-sizing: border-box;
     flex-direction: column;
-    margin-top: 30%;
-    margin-left: 50%;
-    transform: translate(-50%, -50%);
     box-shadow: 0px 0px 25px rgb(0 0 0 / 15%);
 
-}
-
-@media (max-width: 820px){
-    .pop-up__container{
-        margin-top: 50%;
-
-    }
 }
 
 @media (max-width: 560px){
     .pop-up__container{
         width: 282px;
-        margin-top: 95%;
 
     }
 }
