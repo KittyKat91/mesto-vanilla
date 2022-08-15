@@ -23,12 +23,6 @@
     }
 }
 
-@media (max-width: 320px){
-    .pop-up__button-close{
-    top:
-    }
-}
-
 .pop-up__button-close:hover{
     opacity: 0.6;
 }
