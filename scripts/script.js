@@ -44,7 +44,8 @@ const editedProfileBio = document.querySelector('.profile__bio');
 const popupUser = document.querySelector('.pop-up_type_user');
 const popupEdit = document.querySelector('.profile__edit-button');
 
-const closePopupButton = document.querySelector('.pop-up__button-close');
+const userPopupCloseButton = document.querySelector('.pop-up__button-close');
+
 
 const profileEditFormElement = document.querySelector('.pop-up__submitform');
 
@@ -132,7 +133,7 @@ createInitialCards();
 
 // big img open
 function openBigCard(link, name) {
-    popupImgBig.classList.add('pop-up_opened');
+    openPopup(popupImgBig);
     popupImage.src = link;
     popupImage.alt = name;
     popupImageText.textContent = name;
@@ -153,7 +154,7 @@ function submitCardHandler(event) {
     const item = { name: placePopupTitle.value, link: placePopupLink.value };
     placePopupTitle.value = '';
     placePopupLink.value = '';
-    renderPlace(cardsContainer, item, ' before');
+    renderPlace(cardsContainer, item, 'before');
     closePopup(newPlaceForm);
 
 }
@@ -165,7 +166,7 @@ formNewPlace.addEventListener('submit', submitCardHandler);
 
 imgDeleteBtn.addEventListener('click', () => popupImgBig.classList.remove('pop-up_opened'));
 popupContainerCloseBtn.addEventListener('click', () => closePopup(newPlaceForm));
-closePopupButton.addEventListener('click', closePopup(popupUser));
+userPopupCloseButton.addEventListener('click', () => closePopup(popupUser));
 
 profileEditFormElement.addEventListener('submit', submitFormHandler);
 

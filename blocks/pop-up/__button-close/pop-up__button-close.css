@@ -18,9 +18,14 @@
     .pop-up__button-close{
         width: 20px;
         height: 20px;
-        top: -40px;
         right: 0;
         
+    }
+}
+
+@media (max-width: 320px){
+    .pop-up__button-close{
+    top:
     }
 }
 

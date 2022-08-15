@@ -5,7 +5,14 @@
     font-size: 12px;
     line-height: 15px;
     color: #FFFFFF;
-    position: relative;
-    margin-top: 10px;
-    
+    margin: 0;
+    position: absolute;
+    bottom: -22px;
+    left: 0;
+}
+
+@media (max-width: 320px){
+    .pop-up__caption{
+    margin-left: 20px;
+    }
 }
