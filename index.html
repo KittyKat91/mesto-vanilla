@@ -42,8 +42,8 @@
                 <button class="button pop-up__button-close" id="pop-up__user-close" type="button" ></button>
                 <h2 class="pop-up__title">Редактировать профиль</h2>
                 <form class="pop-up__submitform" id="submitform" name="submitform">
-                    <input class="pop-up__field pop-up__field-name" type="text" placeholder="Имя">
-                    <input class="pop-up__field pop-up__field-bio" type="text" placeholder="Профиль">
+                    <input required class="pop-up__field pop-up__field-name" type="text" placeholder="Имя" minlength="2" maxlength="40">
+                    <input required class="pop-up__field pop-up__field-bio" type="text" placeholder="Профиль" minlength="2" maxlength="200">
                     <button class="button pop-up__button-submit" id="pop-up-submit" type="submit">Сохранить</button>
                 </form>
             </div>
@@ -53,7 +53,7 @@
                 <button class="button pop-up__button-close pop-up__container-button-close" id="pop-up__place-close" type="button" ></button> 
                 <h2 class="pop-up__title">Новое место</h2>
                 <form class="pop-up__form pop-up__form_type_addplace" id="addplace" name="addplace"> 
-                    <input class="pop-up__field pop-up__field-title" required type="text" placeholder="Название">
+                    <input class="pop-up__field pop-up__field-title" required type="text" placeholder="Название" minlength="2" maxlength="40">
                     <input class="pop-up__field pop-up__field-link" required type="url" placeholder="Ссылка на картинку">
                     <button class="button pop-up__button-create" id="pop-up__button-create" type="submit">Создать</button>
                 </form>
