@@ -1,0 +1,13 @@
+.pop-up__field-error {
+    opacity: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    display: block;
+    min-height: 30px;
+    padding: 0;
+    margin: 5px 0 -35px 0;
+}
