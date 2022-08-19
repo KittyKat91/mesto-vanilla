@@ -156,7 +156,7 @@ function submitCardHandler(event) {
     placePopupLink.value = '';
     renderPlace(cardsContainer, item, 'before');
     closePopup(newPlaceForm);
-
+    
 }
 
 

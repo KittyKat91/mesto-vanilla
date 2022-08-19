@@ -2,46 +2,39 @@
 //включение валидации вызовом enableValidation
 //все настройки передаются при вызове
 
-enableValidation({
-    formSelector: '.pop-up__form',
-    inputSelector: '.pop-up__field',
-    submitButtonSelector: '.pop-up__button-submit',
-    createButtonSelector: '.pop-up__button-create',
-    inactiveSubmitButtonClass: '.pop-up__button-submit_disabled',
-    inactiveCreateButtonClass: '.pop-up__button-create_disabled',
-    inputSelector: "`.${inputSelector.id}-error`",
-    inputErrorClass: '.pop-up__field-error', //span
-    errorClass: '.pop-up__field-error_visible' 
-  });
+  const formElement = document.querySelectorAll('.pop-up__form');
+  const inputElement = Array.from(formElement.querySelectorAll('.pop-up__field'));
+  const buttonElement = document.querySelectorAll('[type="submit"]');
 
 //shows error message
-const showInputError = (formSelector, inputSelector, errorMessage) => {
+  
+const showInputError = (formElement, inputElement, errorMessage) => {
     //looking for error input
-    const errorElement = formSelector.querySelector(`.${inputSelector.id}-error`);
-    inputSelector.classList.add('pop-up__field-error');
+    const errorElement = formElement.querySelector(`.${inputElement.id}+.pop-up__field-error`);
+    inputElement.classList.add('pop-up__field-error');
     errorElement.textContent = errorMessage;
     errorElement.classList.add('pop-up__field-error_visible', 'pop-up__field_invalid');
     //checks input error type and gives message accordingly
-    if (inputSelector.value === '') {
-        errorElement.textContent = 'Это поле нужно заполнить'
+    if (inputElement.value === '') {
+        errorElement.textContent = 'Вы пропустили это поле.'
     }
-    if (inputSelector.type === 'url') {
-        errorElement.textContent = 'Здесь должен быть URL'
+    if (inputElement.type === 'url') {
+        errorElement.textContent = 'Введите адрес сайта.'
     }
   };
 
 //hides error message
   
-  const hideInputError = (formSelector, inputSelector) => {
-    const errorElement = formSelector.querySelector(`.${inputSelector.id}-error`);
-    inputSelector.classList.remove('pop-up__field-error');
+  const hideInputError = (formElement, inputElement) => {
+    const errorElement = formElement.querySelector(`.${inputSelector.id}+.pop-up__field-error`);
+    inputElement.classList.remove('pop-up__field-error');
     errorElement.classList.remove('pop-up__field-error_visible');
     errorElement.textContent = '';
   };
   
-  const checkInputValidity = (formSelector, inputSelector) => {
-    if (!inputSelector.validity.valid) {
-      showInputError(formSelector, inputSelector, inputSelector.validationMessage);
+  const checkInputValidity = (formElement, inputElement) => {
+    if (!inputElement.validity.valid) {
+      showInputError(formElement, inputElement, inputElement.validationMessage);
     } else {
       hideInputError(formSelector, inputSelector);
     }
@@ -51,31 +44,33 @@ const showInputError = (formSelector, inputSelector, errorMessage) => {
   
   const toggleButtonState = (inputList, buttonElement) => {
     if (hasInvalidInput(inputList)) {
+    buttonElement.setAttribute('disabled', true);
     buttonElement.classList.add('button_inactive');
   } else {
+    buttonElement.removeAttribute("disabled", false);
     buttonElement.classList.remove('button_inactive');
   };
   }
   
   const hasInvalidInput = (inputList) => {
-    return inputList.some((inputSelector) => {
-      return !inputSelector.validity.valid;
-    });
+    return inputList.some((inputElement => {
+      return !inputElement.validity.valid;
+    }));
   };
   
   //----
-  //checks valifity in the field by creating array from the fields
-  const setEventListeners = (formSelector) => {
-    const inputList = Array.from(formSelector.querySelectorAll('.pop-up__field'));
+  //checks validity in the field by creating array from the fields
+  const setEventListeners = (formElement) => {
+    const inputList = Array.from(formElement.querySelectorAll('.pop-up__field'));
 
   //using switch between two classes, as we have 2 different ones for 2 buttons
-    const buttonElement = formSelector.querySelectorAll('.pop-up__button-create:not(.pop-up__button-submit), .pop-up__button-submit:not(.pop-up__button-create)');
+    const buttonElement = formElement.querySelectorAll('.pop-up__button-create:not(.pop-up__button-submit), .pop-up__button-submit:not(.pop-up__button-create)');
   
     toggleButtonState(inputList, buttonElement);
   
-    inputList.forEach((inputSelector) => {
-      inputSelector.addEventListener('input', function () {
-        checkInputValidity(formSelector, inputSelector);
+    inputList.forEach((inputElement) => {
+      inputElement.addEventListener('input', function () {
+        checkInputValidity(formElement, inputElement);
      
         toggleButtonState(inputList, buttonElement);
       });
