@@ -79,7 +79,7 @@ const initialCards = [
 
 function handleKeyUpEscape(evt) {
     if (evt.key === "Escape") {
-        closePopupEsc();
+        closeActivePopup();
     }
 }
 
@@ -168,32 +168,46 @@ formNewPlace.addEventListener("submit", submitCardHandler);
 
 //close function event listeners
 
-popupImgBig.addEventListener("click", (evt) => {
+function closePopupOverlay(evt){
     if (
         evt.target.classList.contains("pop-up") ||
         evt.target.classList.contains("pop-up__button-close")
     ) {
-        closePopup(popupImgBig);
+        closeActivePopup();
     }
-});
-newPlaceForm.addEventListener("click", (evt) => {
-    if (
-        evt.target.classList.contains("pop-up") ||
-        evt.target.classList.contains("pop-up__button-close")
-    ) {
-        closePopup(newPlaceForm);
-    }
-} 
-);
+}
 
-popupUser.addEventListener("click", (evt) => {
-    if (
-        evt.target.classList.contains("pop-up") ||
-        evt.target.classList.contains("pop-up__button-close")
-    ) {
-        closePopup(popupUser);
-    }
-});
+const popups = document.querySelectorAll('.pop-up');
+popups.forEach((popup)=>{
+    popup.addEventListener('click', closePopupOverlay)
+})
+
+// popupImgBig.addEventListener("click", (evt) => {
+//     if (
+//         evt.target.classList.contains("pop-up") ||
+//         evt.target.classList.contains("pop-up__button-close")
+//     ) {
+//         closePopup(popupImgBig);
+//     }
+// });
+// newPlaceForm.addEventListener("click", (evt) => {
+//     if (
+//         evt.target.classList.contains("pop-up") ||
+//         evt.target.classList.contains("pop-up__button-close")
+//     ) {
+//         closePopup(newPlaceForm);
+//     }
+// } 
+// );
+
+// popupUser.addEventListener("click", (evt) => {
+//     if (
+//         evt.target.classList.contains("pop-up") ||
+//         evt.target.classList.contains("pop-up__button-close")
+//     ) {
+//         closePopup(popupUser);
+//     }
+// });
 
 profileEditFormElement.addEventListener("submit", submitFormHandler);
 
@@ -205,13 +219,13 @@ popupEdit.addEventListener("click", () => {
 
 //esc and overlay click close pop-up
 
-document.addEventListener("keydown", function (evt) {
-    if (evt.key === "Escape") {
-        closePopupEsc();
-    }
-});
+// document.addEventListener("keydown", function (evt) {
+//     if (evt.key === "Escape") {
+//         closePopupEsc();
+//     }
+// });
 
-function closePopupEsc() {
+function closeActivePopup() {
     const popupOpened = document.querySelector(".pop-up_opened");
     closePopup(popupOpened);
 }
