@@ -21,7 +21,6 @@ const buttonElement = document.querySelectorAll(config.submitButtonSelector);
 const showInputError = (formElement, inputElement, errorMessage, configs) => {
   //looking for error input
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-  inputElement.classList.add(configs.errorClass);
   errorElement.textContent = errorMessage;
   errorElement.classList.add(
     configs.inputErrorVisible,
@@ -35,7 +34,6 @@ const hideInputError = (formElement, inputElement, configs) => {
   const errorElement = formElement.querySelector(
     `.${inputElement.id}-error`
   );
-  inputElement.classList.remove(configs.errorClass);
   errorElement.classList.remove(configs.inputErrorVisible);
   errorElement.textContent = "";
 };
