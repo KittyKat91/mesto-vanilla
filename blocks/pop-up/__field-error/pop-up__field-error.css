@@ -15,3 +15,11 @@
     margin-left: 36px;
     
 }
+
+@media (max-width: 560px){
+    .pop-up__field-error{
+            margin: 0 22px 0 22px;
+            max-width: 230px;
+            width: 100%;
+        }
+    }

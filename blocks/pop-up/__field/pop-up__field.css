@@ -17,7 +17,9 @@
 
 @media (max-width: 560px){
 .pop-up__field{
-        margin: 43px 22px 0 22px;
+        margin: 0 22px 0 22px;
+        max-width: 230px;
+        width: 100%;
     }
 }
 
